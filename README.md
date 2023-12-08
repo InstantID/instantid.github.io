@@ -1,1 +1,1 @@
-# instantid.github.io
+# Official Website of "InstantID: Zero-shot Identity-Preserving Generation in Seconds"
