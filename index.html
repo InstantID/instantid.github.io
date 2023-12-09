@@ -46,6 +46,13 @@
 
 <body>
 
+  <style>
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+  </style>
+
   <section class="hero">
     <div class="hero-body">
       <div class="container">
@@ -113,7 +120,7 @@
             <p>
               Existing personalization generation methods, such as Textual Inversion, DreamBooth, and LoRA, have made significant progress in custom image creation. 
               However, these works require expensive computational resources and time for fine-tuning, and require multiple reference images, which limits their application in the real world. 
-              To solve these problems, we introduce InstantID, which can generate personalized images in any style using only ONE face image while maintaining high fidelity. 
+              To solve these problems, we introduce InstantID, a plug-and-play module that can generate personalized images in any style using only one face image while maintaining high fidelity. 
               Specifically, we extract face embeddings in images as additional control conditions and concatenate them with text embeddings. To further increase fidelity, we add a controllable branch to inject ID information. 
               Our work is compatible with common pretrained text-to-image diffusion models such as SD1.5 and SDXL as a plugin. Our results show exciting potential applications in downstream tasks.
               Code and pre-trained checkpoints will be made public soon!
@@ -135,7 +142,7 @@
               <img src="./static/documents/figure3.png" alt="Image3" height="100%">
               <div class="content has-text-centered">
                 <p>
-                  <i>InstantID</i> supports photo-realistic styles .
+                  <i>InstantID</i> supports photorealism styles .
                 </p>
               </div>
             </div>
@@ -159,6 +166,15 @@
             </div>
 
             <div class="container is-max-desktop">
+              <img src="./static/documents/figure6.png" alt="Image6" height="100%">
+              <div class="content has-text-centered">
+                <p>
+                  <i>InstantID</i> supports multi-person synthesis in any reference style.
+                </p>
+              </div>
+            </div>
+
+            <div class="container is-max-desktop">
               <img src="./static/documents/figure4.png" alt="Image4" height="100%">
               <div class="content has-text-centered">
                 <p>
@@ -166,7 +182,16 @@
                 </p>
               </div>
             </div>
-  
+            
+            <div class="container max-width: 1200px">
+              <img src="./static/documents/figure5.png" alt="Image5" height="100%">
+              <div class="content has-text-centered">
+                <p>
+                  <i>InstantID</i> supports novel-view synthesis and identity interpolation.
+                </p>
+              </div>
+            </div>
+
           </div>
 
       </div>
