@@ -95,7 +95,7 @@
       <div class="container is-max-desktop">
         <img src="./static/documents/teaser.png" alt="Teaser Image" height="100%">
         <h2 class="subtitle has-text-centered">
-          <i>InstantID</i> supports identity-preserving generation in high fidelity with only one reference face image.
+          <i>InstantID</i> supports identity-preserving generation in high fidelity with only single reference face image.
         </h2>
       </div>
     </div>
@@ -115,7 +115,8 @@
               However, these works require expensive computational resources and time for fine-tuning, and require multiple reference images, which limits their application in the real world. 
               To solve these problems, we introduce InstantID, which can generate personalized images in any style using only ONE face image while maintaining high fidelity. 
               Specifically, we extract face embeddings in images as additional control conditions and concatenate them with text embeddings. To further increase fidelity, we add a controllable branch to inject ID information. 
-              Our work is compatible with common pretrained text-to-image diffusion models such as SD1.5 and SDXL. Code and pre-trained checkpoints will be made public soon!
+              Our work is compatible with common pretrained text-to-image diffusion models such as SD1.5 and SDXL as a plugin. Our results show exciting potential applications in downstream tasks.
+              Code and pre-trained checkpoints will be made public soon!
             </p>
           </div>
         </div>
@@ -129,8 +130,15 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">More Results</h2>
-
-          <div class="hero-body">
+            
+            <div class="container is-max-desktop">
+              <img src="./static/documents/figure3.png" alt="Image3" height="100%">
+              <div class="content has-text-centered">
+                <p>
+                  <i>InstantID</i> supports photo-realistic styles .
+                </p>
+              </div>
+            </div>
 
             <div class="container is-max-desktop">
               <img src="./static/documents/figure1.png" alt="Image1" height="100%">
@@ -149,10 +157,18 @@
                 </p>
               </div>
             </div>
+
+            <div class="container is-max-desktop">
+              <img src="./static/documents/figure4.png" alt="Image4" height="100%">
+              <div class="content has-text-centered">
+                <p>
+                  <i>InstantID</i> supports stacking multiple images with the same ID.
+                </p>
+              </div>
+            </div>
   
           </div>
 
-        </div>
       </div>
     </div>
   </section>
