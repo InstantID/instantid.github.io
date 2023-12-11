@@ -58,7 +58,8 @@
       <div class="container">
         <div class="container has-text-centered">
           <h1 class="title is-1 publication-title">
-            InstantID: Zero-shot Identity-Preserving Generation in Seconds
+            <font color="#FF0000">I</font><font color="#F0000F">n</font><font color="#E1001E">s</font><font color="#D2002D">t</font><font color="#C3003C">a</font><font color="#B4004B">n</font><font color="#A5005A">t</font><font color="#960069">I</font><font color="#870078">D</font>
+            : Zero-shot Identity-Preserving Generation in Seconds
           </h1>
           <div class="is-size-5 publication-authors">
             <div class="author-block">
@@ -120,9 +121,10 @@
             <p>
               Existing personalization generation methods, such as Textual Inversion, DreamBooth, and LoRA, have made significant progress in custom image creation. 
               However, these works require expensive computational resources and time for fine-tuning, and require multiple reference images, which limits their application in the real world. 
-              To solve these problems, we introduce InstantID, a plug-and-play module that can generate personalized images in any style using only one face image while maintaining high fidelity. 
-              Specifically, we extract face embeddings in images as additional control conditions and concatenate them with text embeddings. To further increase fidelity, we add a controllable branch to inject ID information. 
-              Our work is compatible with common pretrained text-to-image diffusion models such as SD1.5 and SDXL as a plugin. Our results show exciting potential applications in downstream tasks.
+              <strong>InstantID</strong> addresses these limitations by leveraging a plug-and-play module, enabling it to adeptly handle image personalization in any style using only one face image while maintaining high fidelity.
+              To preserve the face identity, we introduce a novel face encoder to retain the intricate details of the reference image.
+              InstantID's performance and efficiency in diverse scenarios show its potentiality in various real-world applications.
+              Our work is compatible with common pretrained text-to-image diffusion models such as SD1.5 and SDXL as a plugin.
               Code and pre-trained checkpoints will be made public soon!
             </p>
           </div>
@@ -136,67 +138,85 @@
     <div class="container content is-max-desktop has-text-centered">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">More Results</h2>
 
-          <div class="container is-max-desktop">
-            <img src="./static/documents/figure0.png" alt="Image0" height="100%">
-            <div class="content has-text-centered">
-              <p>
-                <i>InstantID</i> is compatible with any style.
-              </p>
-            </div>
-          </div>
-            
+          <h2 class="title is-4">Stylized Synthesis</h2>
             <div class="container is-max-desktop">
-              <img src="./static/documents/figure3.png" alt="Image3" height="100%">
+              <img src="./static/documents/figure0.png" alt="Image0" height="100%">
               <div class="content has-text-centered">
                 <p>
-                  <i>InstantID</i> supports photorealism styles.
+                  <i>InstantID</i> is compatible with any Art Style. We use <a href="https://civitai.com/models/84040?modelVersionId=196039">YamerMIX</a> as base. All styles are via prompt engineering.
                 </p>
               </div>
             </div>
-
+            
+            <h2 class="title is-4">Unusual Facial Stylized Synthesis</h2>
             <div class="container is-max-desktop">
               <img src="./static/documents/figure1.png" alt="Image1" height="100%">
               <div class="content has-text-centered">
                 <p>
-                  <i>InstantID</i> supports anime styles.
+                  <i>InstantID</i> supports 3D Cartoon Style. We use <a href="https://civitai.com/models/81270?modelVersionId=144566">Samaritan 3d Cartoon</a> as base.
                 </p>
               </div>
             </div>
-  
+
+            <h2 class="title is-4">Photorealism Synthesis</h2>
+            <div class="container is-max-desktop">
+              <img src="./static/documents/figure3.png" alt="Image3" height="100%">
+              <div class="content has-text-centered">
+                <p>
+                  <i>InstantID</i> supports Photorealism Synthesis. We use <a href="https://civitai.com/models/43977?modelVersionId=227916">HelloWorld SDXL 2.0</a> as base.
+                  The number denotes the face cosine similarity between two images, the face embedding is calculated by antelopev2 from insightface.
+                </p>
+              </div>
+            </div>
+
+            <h2 class="title is-4">Non-portrait Stylized Synthesis</h2>
             <div class="container is-max-desktop">
               <img src="./static/documents/figure2.png" alt="Image2" height="100%">
               <div class="content has-text-centered">
                 <p>
-                  <i>InstantID</i> also works well in non-portrait style .
-                </p>
-              </div>
-            </div>
-
-            <div class="container is-max-desktop">
-              <img src="./static/documents/figure6.png" alt="Image6" height="100%">
-              <div class="content has-text-centered">
-                <p>
-                  <i>InstantID</i> supports multi-person synthesis in any reference style.
-                </p>
-              </div>
-            </div>
-
-            <div class="container is-max-desktop">
-              <img src="./static/documents/figure4.png" alt="Image4" height="100%">
-              <div class="content has-text-centered">
-                <p>
-                  <i>InstantID</i> supports stacking multiple images with the same ID.
+                  <i>InstantID</i> also works well in Non-portrait Style. We use <a href="https://civitai.com/models/84040?modelVersionId=196039">YamerMIX</a> as base.
+                  The strength of ID is increased from the left to the right.
                 </p>
               </div>
             </div>
             
+            <h2 class="title is-4">Novel View Synthesis</h2>
+            <div class="container is-max-desktop">
+              <img src="./static/documents/page5.png" alt="Image6" height="100%">
+              <div class="content has-text-centered">
+                <p>
+                  <i>InstantID</i> supports Novel View Synthesis under any given pose.
+                </p>
+              </div>
+            </div>
+            
+            <h2 class="title is-4">Stacking Multiple References</h2>
+            <div class="container is-max-desktop">
+              <img src="./static/documents/figure4-all.png" alt="Image4" height="100%">
+              <div class="content has-text-centered">
+                <p>
+                  <i>InstantID</i> supports Stacking Multiple Images from the same ID for futher improvement.
+                </p>
+              </div>
+            </div>
+            
+            <h2 class="title is-4">Identity interpolation</h2>
             <div class="container max-width: 1200px">
               <img src="./static/documents/figure5.png" alt="Image5" height="100%">
               <div class="content has-text-centered">
                 <p>
-                  <i>InstantID</i> supports novel-view synthesis and identity interpolation.
+                  <i>InstantID</i> supports Identity interpolation between two different faces.
+                </p>
+              </div>
+            </div>
+
+            <h2 class="title is-4">Multi-ID Synthesis</h2>
+            <div class="container is-max-desktop">
+              <img src="./static/documents/figure6.png" alt="Image6" height="100%">
+              <div class="content has-text-centered">
+                <p>
+                  <i>InstantID</i> supports Multi-person Synthesis in any reference style.
                 </p>
               </div>
             </div>
