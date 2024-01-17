@@ -159,7 +159,7 @@
   <section class="hero teaser">
     <div class="hero-body">
       <div class="container is-max-desktop">
-        <img src="./static/documents/famous.png" alt="Teaser Image" height="100%">
+        <img src="./static/documents/applications.png" alt="Teaser Image" height="100%">
         <h2 class="subtitle has-text-centered">
           Our model supports identity-preserving generation in high fidelity with only single reference image in any style.
         </h2>
@@ -175,6 +175,7 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Abstract</h2>
+
           <div class="content has-text-justified">
             <p>
               There has been significant progress in personalized image synthesis with methods such as Textual Inversion, DreamBooth, and LoRA. Yet, their real-world applicability is hindered by high storage demands, lengthy fine-tuning processes, and the need for multiple reference images.
@@ -220,29 +221,50 @@
     </div>
   </section>
 
-  <section class="section">
-    <div class="container is-max-desktop">
 
-      <!-- Abstract. -->
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Put Your Face in Anystyle</h2>
-
-          <div class="container is-max-desktop">
-            <img src="./static/documents/author.png" alt="Image0" height="100%">
+  <div class="section">
+    <div class="container">
+      <h2 class="title has-text-centered">Put Your Face in Any Style</h3>
+      <div id="results-carousel" class="carousel results-carousel carousel-control-prev carousel-inner" data-ride="carousel">
+        <div>
+          <div class="results-item">
+            <img src="./static/documents/0.png", height="100">
           </div>
+        </div>
 
-          <div class="content has-text-centered">
-            <p>
-              The stylized results of the InstantX Team in author order.
-            </p>
+      <div>
+          <div class="results-item">
+            <img src="./static/documents/1.png" alt="Image0" height="100%">
           </div>
+        </div>
 
+        <div>
+          <div class="results-item">
+            <img src="./static/documents/2.png" alt="Image0" height="100%">
+          </div>
+        </div>
+
+        <div>
+          <div class="results-item">
+            <img src="./static/documents/3.png" alt="Image0" height="100%">
+          </div>
+        </div>
+
+        <div class="results-item">
+          <img src="./static/documents/4.png", height="100">
         </div>
       </div>
-      <!--/ Abstract. -->
-    </div>
-  </section>
+
+      <div class="content has-text-centered">
+        <p>
+          InstantID supports both Stylizated and Realistic styles. Scroll for more examples.
+        </p>
+      </div>
+
+
+      </div>
+
+  </div class="section">
 
   <section class="section">
     <div class="container is-max-desktop">
@@ -324,24 +346,13 @@
 
   </section>
 
-
   <section class="section">
     <div class="container is-max-desktop">
 
       <!-- Abstract. -->
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Applications</h2>
-
-          <div class="container is-max-desktop">
-            <img src="./static/documents/novel-view.jpg" alt="Image0" height="100%">
-          </div>
-
-          <div class="content has-text-centered">
-            <p>
-              Novel View Synthesis under any given pose.
-            </p>
-          </div>
+          <h2 class="title is-3">ID and Style Interpolation</h2>
 
           <div class="container is-max-desktop">
             <img src="./static/documents/id-interpolation.jpg" alt="Image0" height="100%">
@@ -349,17 +360,17 @@
 
           <div class="content has-text-centered">
             <p>
-              Identity interpolation between different characters.
+              Interpolation between two different characters.
             </p>
           </div>
 
           <div class="container is-max-desktop">
-            <img src="./static/documents/page9.png" alt="Image0" height="100%">
+            <img src="./static/documents/id-interpolation-1.png" alt="Image0" height="100%">
           </div>
 
           <div class="content has-text-centered">
             <p>
-              Multi-identity synthesis with regional control. 
+              Our work also flexiblely supports add identity attribute into a non-human character.
             </p>
           </div>
 
