@@ -10,8 +10,6 @@
 
   <title>InstantID</title>
 
-<!-- <script type="text/javascript">window.location.href="instantid.github.io";</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MRQC0YFE17"></script> -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -19,7 +17,6 @@
 
   gtag('config', 'G-MRQC0YFE17');
 </script>
-
 
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
@@ -75,7 +72,13 @@
           </a>
           <div class="navbar-dropdown">
             <a class="navbar-item" href="https://instantid.github.io/">
-              InstantStyle
+              InstantAnimate
+            </a>
+            <a class="navbar-item" href="https://instantid.github.io/">
+              InstantTryon
+            </a>
+            <a class="navbar-item" href="https://instantid.github.io/">
+              InstantAnything
             </a>
             <a class="navbar-item" href="https://instantid.github.io/">
               InstantID
@@ -97,10 +100,29 @@
             <font color="#FF0000">I</font><font color="#F0000F">n</font><font color="#E1001E">s</font><font color="#D2002D">t</font><font color="#C3003C">a</font><font color="#B4004B">n</font><font color="#A5005A">t</font><font color="#960069">I</font><font color="#870078">D</font>
             : Zero-shot Identity-Preserving Generation in Seconds
           </h1>
+          
           <div class="is-size-5 publication-authors">
             <div class="author-block">
-              <span class="author-block">Anonymous Authors </span>
+              <a href="https://github.com/wangqixun">Qixun Wang</a>,
             </div>
+            <div class="author-block">
+              Xu Bai,
+            </div>
+            <div class="author-block">
+              <a href="https://haofanwang.github.io/">Haofan Wang</a><sup>*</sup>,
+            </div>
+            <div class="author-block">
+              <a href="https://github.com/ZekuiQin">Zekui Qing</a>,
+            </div>
+            <div class="author-block">
+              <a href="https://antonioo-c.github.io/">Anthony Chen</a>
+            </div>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">InstantX Team </span>
+            <br>
+            <span class="author-block"><sup>*</sup>Corresponding Author</span>
           </div>
 
           <div class="column has-text-centered">
@@ -108,11 +130,11 @@
               <!-- PDF Link. -->
 
               <span class="link-block">
-                <a href="instantid.github.io" class="external-link button is-normal is-rounded is-dark">
+                <a href="https://arxiv.org/abs/2401.07519" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
                   </span>
-                  <span>Paper</span>
+                  <span>Arxiv</span>
                 </a>
               </span>
 
@@ -137,9 +159,9 @@
   <section class="hero teaser">
     <div class="hero-body">
       <div class="container is-max-desktop">
-        <img src="./static/documents/teaser.png" alt="Teaser Image" height="100%">
+        <img src="./static/documents/famous.png" alt="Teaser Image" height="100%">
         <h2 class="subtitle has-text-centered">
-          Applications of <i>InstantID</i>. Our model supports identity-preserving generation in high fidelity with only single reference face image.
+          Our model supports identity-preserving generation in high fidelity with only single reference image in any style.
         </h2>
       </div>
     </div>
@@ -155,13 +177,10 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Existing personalization generation methods, such as Textual Inversion, DreamBooth, and LoRA, have made significant progress in custom image creation. 
-              However, these works require expensive computational resources and time for fine-tuning, and require multiple reference images, which limits their application in the real world. 
-              <strong>InstantID</strong> addresses these limitations by leveraging a plug-and-play module, enabling it to adeptly handle image personalization in any style using only one face image while maintaining high fidelity.
-              To preserve the face identity, we introduce a novel face encoder to retain the intricate details of the reference image.
-              InstantID's performance and efficiency in diverse scenarios show its potentiality in various real-world applications.
-              Our work is compatible with common pretrained text-to-image diffusion models such as SD1.5 and SDXL as a plugin.
-              Code and pre-trained checkpoints will be made public soon!
+              There has been significant progress in personalized image synthesis with methods such as Textual Inversion, DreamBooth, and LoRA. Yet, their real-world applicability is hindered by high storage demands, lengthy fine-tuning processes, and the need for multiple reference images.
+              Conversely, existing ID embedding-based methods, while requiring only a single forward inference, face challenges: they either necessitate extensive fine-tuning across numerous model parameters, lack compatibility with community pre-trained models, or fail to maintain high face fidelity. 
+              Addressing these limitations, we introduce <strong>InstantID</strong>, a powerful diffusion model-based solution. Our plug-and-play module adeptly handles image personalization in various styles using just a single facial image, while ensuring high fidelity.  
+              To achieve this, we design a novel IdentityNet by imposing strong semantic and weak spatial conditions, integrating facial and landmark images with textual prompts to steer the image generation. InstantID demonstrates exceptional performance and efficiency, proving highly beneficial in real-world applications where identity preservation is paramount. Moreover, our work seamlessly integrates with popular pre-trained text-to-image diffusion models like SD1.5 and SDXL, serving as an adaptable plugin. Our codes and pre-trained checkpoints will be available at <a href="https://github.com/InstantID/InstantID">this URL</a>.
             </p>
           </div>
         </div>
@@ -170,107 +189,198 @@
 
   </section>
 
-  <section class="hero section" id="results">
-    <div class="container content is-max-desktop has-text-centered">
+  <section class="method">
+    <div class="container is-max-desktop">
+
+      <!-- Abstract. -->
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
+          <h2 class="title is-3">Method</h2>
 
-          <h2 class="title is-4">Stylized Synthesis</h2>
-            <div class="container is-max-desktop">
-              <img src="./static/documents/figure0.png" alt="Image0" height="100%">
-              <div class="content has-text-centered">
-                <p>
-                  <i>InstantID</i> is compatible with any Art Style. We use <a href="https://civitai.com/models/84040?modelVersionId=196039">YamerMIX</a> as base. All styles are via prompt engineering.
-                </p>
-              </div>
-            </div>
-            
-            <h2 class="title is-4">Unusual Facial Stylized Synthesis</h2>
-            <div class="container is-max-desktop">
-              <img src="./static/documents/figure1.png" alt="Image1" height="100%">
-              <div class="content has-text-centered">
-                <p>
-                  <i>InstantID</i> supports 3D Cartoon Style. We use <a href="https://civitai.com/models/81270?modelVersionId=144566">Samaritan 3d Cartoon</a> as base.
-                </p>
-              </div>
-            </div>
-
-            <h2 class="title is-4">Photorealism Synthesis</h2>
-            <div class="container is-max-desktop">
-              <img src="./static/documents/figure3.png" alt="Image3" height="100%">
-              <div class="content has-text-centered">
-                <p>
-                  <i>InstantID</i> supports Photorealism Synthesis. We use <a href="https://civitai.com/models/43977?modelVersionId=227916">HelloWorld SDXL 2.0</a> as base.
-                  The number denotes the face cosine similarity between two images, the face embedding is calculated by antelopev2 from insightface.
-                </p>
-              </div>
-            </div>
-
-            <h2 class="title is-4">Non-portrait Stylized Synthesis</h2>
-            <div class="container is-max-desktop">
-              <img src="./static/documents/figure2.png" alt="Image2" height="100%">
-              <div class="content has-text-centered">
-                <p>
-                  <i>InstantID</i> also works well in Non-portrait Style. We use <a href="https://civitai.com/models/84040?modelVersionId=196039">YamerMIX</a> as base.
-                  The strength of ID is increased from the left to the right.
-                </p>
-              </div>
-            </div>
-            
-            <h2 class="title is-4">Novel View Synthesis</h2>
-            <div class="container is-max-desktop">
-              <img src="./static/documents/page5.png" alt="Image6" height="100%">
-              <div class="content has-text-centered">
-                <p>
-                  <i>InstantID</i> supports Novel View Synthesis under any given pose.
-                </p>
-              </div>
-            </div>
-            
-            <h2 class="title is-4">Stacking Multiple References</h2>
-            <div class="container is-max-desktop">
-              <img src="./static/documents/figure4-all.png" alt="Image4" height="100%">
-              <div class="content has-text-centered">
-                <p>
-                  <i>InstantID</i> supports Stacking Multiple Images from the same ID for futher improvement.
-                </p>
-              </div>
-            </div>
-            
-            <h2 class="title is-4">Identity interpolation</h2>
-            <div class="container max-width: 1200px">
-              <img src="./static/documents/figure5.png" alt="Image5" height="100%">
-              <div class="content has-text-centered">
-                <p>
-                  <i>InstantID</i> supports Identity interpolation between two different faces.
-                </p>
-              </div>
-            </div>
-
-            <h2 class="title is-4">Multi-ID Synthesis in Single Style</h2>
-            <div class="container is-max-desktop">
-              <img src="./static/documents/figure6.png" alt="Image6" height="100%">
-              <div class="content has-text-centered">
-                <p>
-                  <i>InstantID</i> supports Multi-person Synthesis in any reference style.
-                </p>
-              </div>
-            </div>
-
-            <h2 class="title is-4">Multi-ID Synthesis in Multi-Style</h2>
-            <div class="container is-max-desktop">
-              <img src="./static/documents/page9.png" alt="Image6" height="100%">
-              <div class="content has-text-centered">
-                <p>
-                  <i>InstantID</i> supports Multi-person Synthesis in multiple reference styles via regional control.
-                </p>
-              </div>
-            </div>
-
+          <div class="content has-text-justified">
+            <p>
+              Given only one reference ID image, InstantID aims to generate customized images with various poses or styles from a single reference ID image while ensuring high fidelity. 
+              Following figure provides an overview of our method. It incorporates three crucial components: (1) An ID embedding that captures robust semantic face information; (2) A lightweight adapted module with decoupled cross-attention, facilitating the use of an image as a visual prompt; (3) An IdentityNet that encodes the detailed features from the reference facial image with additional spatial control.
+            </p>
           </div>
 
+          <div class="container is-max-desktop">
+            <img src="./static/documents/pipeline.png" alt="Image0" height="100%">
+          </div>
+
+          <div class="content has-text-justified">
+            <p>
+              We are different from previous works in the following aspects: (1) We do not train UNet, so we can preserve the generation ability of the original text-to-image model and be compatible with existing pre-trained models and ControlNets in the community; (2) We don't require test-time tuning, so for a specific character, there is no need to collect multiple images for fine-tuning, only a single image needs to be inferred once; (3) We achieve better face fidelity, and retain the editability of text.
+            </p>
+          </div>
+
+        </div>
       </div>
+      <!--/ Abstract. -->
     </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Put Your Face in Anystyle</h2>
+
+          <div class="container is-max-desktop">
+            <img src="./static/documents/author.png" alt="Image0" height="100%">
+          </div>
+
+          <div class="content has-text-centered">
+            <p>
+              The stylized results of the InstantX Team in author order.
+            </p>
+          </div>
+
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Editability and Multi-References</h2>
+
+          <div class="container is-max-desktop">
+            <img src="./static/documents/editbility.jpg" alt="Image0" height="100%">
+          </div>
+
+          <div class="content has-text-justified">
+            <p>
+              Demonstration of the robustness, editability, and compatibility of InstantID. Column 1 shows the result of Image Only results where the prompt is set to empty during inference. Columns 2-4 show the editability through text prompt. Columns 5-9 show the compatibility with existing ControlNets (canny & depth).
+            </p>
+          </div>
+
+          <div class="container is-max-desktop">
+            <img src="./static/documents/multi-ref.jpg" alt="Image0" height="100%">
+          </div>
+
+          <div class="content has-text-justified">
+            <p>
+              Effect of the number of reference images. For multiple reference images, we take the average mean of ID embeddings as image prompt. InstantID is able to achieve good results even with only one single reference image.
+            </p>
+          </div>
+
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Comparison with Previous Works</h2>
+
+          <div class="container is-max-desktop">
+            <img src="./static/documents/compare-a.png" alt="Image0" height="100%">
+          </div>
+
+          <div class="content has-text-justified">
+            <p>
+              Comparison with existing tuning-free state-of-the-art techniques. Specifically, we compare with IP-Adapter (IPA), IP-Adapter-FaceID, and recent PhotoMaker. Among them, PhotoMaker needs to train the LoRA parameters of UNet. It can be seen that both PhotoMaker and IP-Adapter-FaceID achieves good fidelity, but there is obvious degradation of text control capabilities.
+              In contrast, InstantID achieves better fidelity and retain good text editability (faces and styles blend better). 
+            </p>
+          </div>
+
+          <div class="container is-max-desktop">
+            <img src="./static/documents/compare-c.png" alt="Image0" height="100%">
+          </div>
+
+          <div class="content has-text-centered">
+            <p>
+              Comparison of InstantID with pre-trained character LoRAs. We can achieve competitive results as LoRAs without any training.
+            </p>
+          </div>
+
+          <div class="container is-max-desktop">
+            <img src="./static/documents/compare-b.png" alt="Image0" height="100%">
+          </div>
+
+          <div class="content has-text-justified">
+            <p>
+              Comparison of InstantID with InsightFace Swapper (also known as ROOP or Refactor). However, in non-realistic style, our work is more flexible on the integration of face and background.
+            </p>
+          </div>
+
+        </div>
+      </div>
+      <!--/ Abstract. -->
+
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Applications</h2>
+
+          <div class="container is-max-desktop">
+            <img src="./static/documents/novel-view.jpg" alt="Image0" height="100%">
+          </div>
+
+          <div class="content has-text-centered">
+            <p>
+              Novel View Synthesis under any given pose.
+            </p>
+          </div>
+
+          <div class="container is-max-desktop">
+            <img src="./static/documents/id-interpolation.jpg" alt="Image0" height="100%">
+          </div>
+
+          <div class="content has-text-centered">
+            <p>
+              Identity interpolation between different characters.
+            </p>
+          </div>
+
+          <div class="container is-max-desktop">
+            <img src="./static/documents/page9.png" alt="Image0" height="100%">
+          </div>
+
+          <div class="content has-text-centered">
+            <p>
+              Multi-identity synthesis with regional control. 
+            </p>
+          </div>
+
+        </div>
+      </div>
+      <!--/ Abstract. -->
+
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container content is-max-desktop">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{wang2024instantid,
+        title={InstantID: Zero-shot Identity-Preserving Generation in Seconds}, 
+        author={Qixun Wang and Xu Bai and Haofan Wang and Zekui Qin and Anthony Chen},
+        year={2024},
+        eprint={2401.07519},
+        archivePrefix={arXiv},
+        primaryClass={cs.CV}
+  }</code></pre>
+  </div>
   </section>
 
 
